@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <img id="mypic" />
+        <form id="myform">
+            <input id="username" name="username" />
+            <button>Submit</button>
+        </form>
+    </div>
+    <script>
+        let myform = document.getElementById("myform");
+        let pic = document.getElementById("mypic");
+        let username = documrnt.getElementById("username");
+
+        myform.onsubmit = function(e) {
+            e.preventDefault();
+            let data = username.value;
+            let responsepromise = axios.get("https://api.github.com/users/" + data);
+            responsepromise.then(function (response){
+                pic.setAttribute("src", resposne.data.avatar_url);
+            });
+        }
+    </script>
+</body>
+</html>

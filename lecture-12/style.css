@@ -1,0 +1,13 @@
+.container{
+    height: 550px;
+    width: 600px;
+    background-color: cadetblue;
+    display: grid;
+    row-gap: 5px;
+    grid-template: 1fr,1fr,1fr / 1fr,1fr,1fr;
+    gap: 10px 10px;
+}
+
+.items{
+    background-color: aqua;
+}
